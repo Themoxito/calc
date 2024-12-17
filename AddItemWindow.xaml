@@ -1,0 +1,56 @@
+﻿<Window x:Class="CalcHome.AddItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalcHome"
+        mc:Ignorable="d"
+        Title="Добавить" Height="450" Width="300" ResizeMode="NoResize">
+    <StackPanel Background="CadetBlue">
+        <Label Content="Введите название:" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="18"/>
+        <TextBox x:Name="ItemNameTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25"/>
+
+        <Label Content="Введите площадь:" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="18"/>
+        <TextBox x:Name="ItemSquareTextBox" HorizontalAlignment="Center" VerticalAlignment="Top" Width="250" Height="25"/>
+
+        <Label Content="Введите тарифы:" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="18"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Label Content="Горячая вода" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="14"/>
+            <TextBox x:Name="GorValue" Background="CadetBlue" Grid.Column="1" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0 0 10 0"/>
+
+            <Label Grid.Row="1" Content="Холодная вода" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="14"/>
+            <TextBox x:Name="HolValue" Grid.Row="1" Background="CadetBlue" Grid.Column="1" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0 0 10 0"/>
+
+            <Label Grid.Row="2" Content="Водоотведение" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="14"/>
+            <TextBox x:Name="OtwValue" Grid.Row="2" Background="CadetBlue" Grid.Column="1" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0 0 10 0"/>
+
+            <Label Grid.Row="3" Content="Газ" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="14"/>
+            <TextBox x:Name="GazValue" Grid.Row="3" Background="CadetBlue" Grid.Column="1" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0 0 10 0"/>
+
+            <Label Grid.Row="4" Content="Отопление" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="14"/>
+            <TextBox x:Name="OtpValue" Grid.Row="4" Background="CadetBlue" Grid.Column="1" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0 0 10 0"/>
+
+            <Label Grid.Row="5" Content="Электричество день" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="14"/>
+            <TextBox x:Name="ElGayValue" Grid.Row="5" Background="CadetBlue" Grid.Column="1" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0 0 10 0"/>
+
+            <Label Grid.Row="6" Content="Электричесвто ночь" HorizontalAlignment="Center" VerticalAlignment="Top" FontWeight="bold" FontSize="14"/>
+            <TextBox x:Name="ElNigValue" Grid.Row="6" Background="CadetBlue" Grid.Column="1" Height="20" TextAlignment="Center" TextWrapping="Wrap" Margin="0 0 10 0"/>
+        </Grid>
+
+        <Button Content="Добавить" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="18" FontWeight="Bold" Background="Tan" Margin="0 10 0 0" Width="120" Click="AddButton_Click"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,180 @@
+﻿<Window x:Class="CalcHome.Calc"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CalcHome"
+        mc:Ignorable="d"
+        Title="CalcHome" MinHeight="650" MinWidth="900">
+    <Window.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="bold"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontWeight" Value="bold"/>
+            <Setter Property="Background" Value="Tan"/>
+        </Style>
+    </Window.Resources>
+    <Grid Background="CadetBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="Black" Grid.Column="0" BorderThickness="0 0 1 1">
+            <Label x:Name="NameHome" Content="Home"/>
+        </Border>
+
+        <Border BorderBrush="Black" Grid.Column="1" BorderThickness="0 0 0 1">
+            <Label x:Name="state" Content="Расчет"/>
+        </Border>
+
+        <Border Grid.Row="1" Grid.RowSpan="6" BorderThickness="0 0 1 1" BorderBrush="Black">
+            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                <StackPanel>
+                    <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                        <StackPanel>
+                            <Label Content="Вода"/>
+                            <Label Content="Горячая" HorizontalAlignment="Left" FontSize="20"/>
+                            <Label x:Name="Gortar" FontSize="15" Content="Тариф: 36,00₽" HorizontalAlignment="Left"/>
+                            <Label x:Name="Gortaritog" FontSize="15" Content="Итог за месяц: 0₽" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+
+                    <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                        <StackPanel>
+                            <Label Content="Холодная" HorizontalAlignment="Left" FontSize="20"/>
+                            <Label x:Name="Holtar" FontSize="15" Content="Тариф: 36,00₽" HorizontalAlignment="Left"/>
+                            <Label x:Name="Holtaritog" FontSize="15" Content="Итог за месяц: 0₽" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+
+
+                    <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                        <StackPanel>
+                            <Label Content="Водоотведение" HorizontalAlignment="Left" FontSize="20"/>
+                            <Label x:Name="Otwtar" FontSize="15" Content="Тариф: 36,00₽" HorizontalAlignment="Left"/>
+                            <Label x:Name="Otwtaritog" FontSize="15" Content="Итог за месяц: 0₽" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                        <StackPanel>
+                            <Label Content="Электричество"/>
+                            <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                                <StackPanel>
+                                    <Label Content="День" HorizontalAlignment="Left" FontSize="20"/>
+                                    <Label x:Name="ElDattar" FontSize="15" Content="Тариф: 36,00₽" HorizontalAlignment="Left"/>
+                                    <Label x:Name="ElDayitog" FontSize="15" Content="Итог за месяц: 0₽" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </Border>
+
+                            <Border BorderThickness="0 0 0 0" BorderBrush="Black">
+                                <StackPanel>
+                                    <Label Content="Ночь" HorizontalAlignment="Left" FontSize="20"/>
+                                    <Label x:Name="ElNightar" FontSize="15" Content="Тариф: 36,00₽" HorizontalAlignment="Left"/>
+                                    <Label x:Name="ElNighitog" FontSize="15" Content="Итог за месяц: 0₽" HorizontalAlignment="Left"/>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Border>
+                    <Border BorderThickness="0 0 0 1" BorderBrush="Black">
+                        <StackPanel>
+                            <Label Content="Газ" FontSize="20"/>
+                            <Label x:Name="Gaztar" FontSize="18" Content="Тариф: 36,00₽" HorizontalAlignment="Left"/>
+                            <Label x:Name="Gaztaritog" FontSize="15" Content="Итог за месяц: 0₽" HorizontalAlignment="Left"/>
+                        </StackPanel>
+                    </Border>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+
+                            <Border BorderThickness="0 0 1 1" BorderBrush="Black">
+                                <Label Content="Лето" FontSize="20"/>
+                            </Border>
+
+                            <Border Grid.Row="1" BorderThickness="0 0 1 0" BorderBrush="Black">
+                                <Label x:Name="summer" Content="0₽" FontSize="20"/>
+                            </Border>
+
+                            <Border Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="Black">
+                                <Label Content="Зима" FontSize="20"/>
+                            </Border>
+
+                            <Border Grid.Row="1" Grid.Column="1" BorderThickness="0 0 0 0" BorderBrush="Black">
+                                <Label x:Name="winter" Content="0₽" FontSize="20"/>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Border>
+
+
+        <Border Grid.Row="1" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="Black">
+            <StackPanel Margin="10 0">
+                <Label x:Name="GorWoterText" Content="Горячая вода (0м³)" HorizontalAlignment="Left"/>
+                <Slider x:Name="GorWoter" Minimum="0" Maximum="50" TickFrequency="2.5" IsSnapToTickEnabled="True" LargeChange="10" SmallChange="1" />
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="Black">
+            <StackPanel Grid.Row="1" Margin="10 0">
+                <Label x:Name="HolWoterText" Content="Холодная вода (0м³)" HorizontalAlignment="Left"/>
+                <Slider x:Name="HolWoter" Minimum="0" Maximum="50" TickFrequency="2.5" IsSnapToTickEnabled="True" LargeChange="10" SmallChange="1" />
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Row="3" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="Black">
+            <StackPanel Grid.Row="2" Margin="10 0">
+                <Label x:Name="El" Content="Электричество день (0кв/ч)" HorizontalAlignment="Left"/>
+                <Slider x:Name="ElectroDay" Minimum="0" Maximum="200" TickFrequency="2.5" IsSnapToTickEnabled="True" LargeChange="10" SmallChange="1" />
+            </StackPanel>
+        </Border>
+        <Border Grid.Row="4" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="Black">
+            <StackPanel Grid.Row="2" Margin="10 0">
+                <Label x:Name="El2" Content="Электричество ночь (0кв/ч)" HorizontalAlignment="Left"/>
+                <Slider x:Name="ElectroNight" Minimum="0" Maximum="200" TickFrequency="2.5" IsSnapToTickEnabled="True" LargeChange="10" SmallChange="1" />
+            </StackPanel>
+        </Border>
+
+
+        <Border Grid.Row="5" Grid.Column="1" BorderThickness="0 0 0 1" BorderBrush="Black">
+            <StackPanel Grid.Row="3" Margin="10 0">
+                <Label x:Name="GazText" Content="Газ (0м³/ч)" HorizontalAlignment="Left"/>
+                <Slider x:Name="Gaz" Minimum="0" Maximum="50" TickFrequency="2.5" IsSnapToTickEnabled="True" LargeChange="10" SmallChange="1" />
+            </StackPanel>
+        </Border>
+
+
+        <StackPanel Grid.Row="6" Grid.Column="1">
+            <Label Content="*в расчет за зиму входит рассчет за отопление в зависимости от размера жилой площади." FontSize="12"/>
+            <Label Content="*если в живой площади отсутствует газ не поднимайте ползунок или выставите тафир в 0" FontSize="12"/>
+            <Button Width="150" Height="40" Content="Сохранить" Click="Save_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
